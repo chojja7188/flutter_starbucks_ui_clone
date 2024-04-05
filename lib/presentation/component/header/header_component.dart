@@ -10,7 +10,7 @@ class HeaderComponent extends StatelessWidget {
         children: [
           Image.asset('assets/images/head_image.jpeg'),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 8),
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starbucks_ui_clone/presentation/component/header_component.dart';
+import 'package:flutter_starbucks_ui_clone/presentation/component/header/app_bar_component.dart';
+import 'package:flutter_starbucks_ui_clone/presentation/component/header/header_component.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -9,22 +11,10 @@ class HomeTab extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         HeaderComponent(),
-        SliverAppBar(
-          scrolledUnderElevation: 0,
-          pinned: true,
-          flexibleSpace: FlexibleSpaceBar(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text("What's New", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
-                  Text("Coupon", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
-                ],
-              ),
-              background: Column(
-                children: [
-
-                ],
-              )
+        AppBarComponent(),
+        SliverToBoxAdapter(
+          child: Container(
+            
           ),
         ),
         SliverList(
