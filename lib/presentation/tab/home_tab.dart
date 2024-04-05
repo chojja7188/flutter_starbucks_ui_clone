@@ -66,6 +66,8 @@ class _HomeTabState extends State<HomeTab> {
         )
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedFontSize: 13,
+        unselectedFontSize: 13,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: UiConfig.primaryColor,
         onTap: (index) {
