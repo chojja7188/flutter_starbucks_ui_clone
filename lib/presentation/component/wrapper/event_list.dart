@@ -5,7 +5,7 @@ import 'package:flutter_starbucks_ui_clone/repository/event_repository.dart';
 
 class EventList extends StatefulWidget {
   final EventRepository repository;
-  const EventList({Key? key, required this.repository}) : super(key: key);
+  const EventList({super.key, required this.repository});
 
   @override
   State<EventList> createState() => _EventListState();

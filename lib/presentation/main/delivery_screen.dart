@@ -11,7 +11,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   bool _isLoading = true;
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 2)).then((value) {
+    Future.delayed(const Duration(seconds: 2)).then((value) {
       setState(() {
         _isLoading = false;
       });
@@ -24,13 +24,13 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Delivers', style: TextStyle(fontWeight: FontWeight.bold)),
-        leading:  BackButton(
+        title: const Text('Delivers', style: TextStyle(fontWeight: FontWeight.bold)),
+        leading:  const BackButton(
           color: Colors.black,
         ),
       ),
       body: Center(
-        child: _isLoading ? CircularProgressIndicator() : Text('배달 안 합니다.', style: TextStyle(fontSize: 40)),
+        child: _isLoading ? const CircularProgressIndicator() : const Text('배달 안 합니다.', style: TextStyle(fontSize: 40)),
       )
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class HeaderComponent extends StatefulWidget {
   final bool visible;
-  const HeaderComponent({Key? key, required this.visible}) : super(key: key);
+  const HeaderComponent({super.key, required this.visible});
 
   @override
   State<HeaderComponent> createState() => _HeaderComponentState();
@@ -15,7 +15,7 @@ class _HeaderComponentState extends State<HeaderComponent> {
     return SliverToBoxAdapter(
       child: AnimatedOpacity(
         opacity: widget.visible ? 1 : 0,
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
         child: Column(
           children: [
             Image.asset('assets/images/head_image.jpeg'),
@@ -29,7 +29,7 @@ class _HeaderComponentState extends State<HeaderComponent> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
+                        const Row(
                           children: [
                             Text('5',
                                 style: TextStyle(
@@ -42,19 +42,19 @@ class _HeaderComponentState extends State<HeaderComponent> {
                             Text('until Green Level', style: TextStyle(color: Colors.grey, fontSize: 16))
                           ],
                         ),
-                        SizedBox(height: 4),
+                        const SizedBox(height: 4),
                         Container(
                           height: 7,
                           decoration: BoxDecoration(
-                              color: Color(0xffececed),
+                              color: const Color(0xffececed),
                               borderRadius: BorderRadius.circular(8)
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(width: 32),
-                  Row(
+                  const SizedBox(width: 32),
+                  const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text('0', style: TextStyle(
@@ -73,7 +73,7 @@ class _HeaderComponentState extends State<HeaderComponent> {
                         )),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 5),
+                        padding: EdgeInsets.only(top: 5),
                         child: Icon(Icons.star, color: Colors.grey, size: 17),
                       ),
                     ],

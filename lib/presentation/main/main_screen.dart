@@ -4,10 +4,10 @@ import 'package:flutter_starbucks_ui_clone/presentation/component/header/header_
 import 'package:flutter_starbucks_ui_clone/presentation/tab/home_tab.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: HomeTab());
+    return const SafeArea(child: HomeTab());
   }
 }

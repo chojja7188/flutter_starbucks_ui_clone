@@ -44,28 +44,28 @@ class _HomeTabState extends State<HomeTab> {
         controller: _controller,
         slivers: [
           HeaderComponent(visible: _headerVisible),
-          AppBarComponent(),
-          FirstPromotionComponent(),
-          SecondPromotionComponent(),
+          const AppBarComponent(),
+          const FirstPromotionComponent(),
+          const SecondPromotionComponent(),
           WhatsNewComponent(repository: NewsRepository()),
           EventList(repository: EventRepository()),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(height: 30)
           )
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         extendedIconLabelSpacing: _floatButtonExtended ? 10 : 5,
-        extendedPadding: _floatButtonExtended ? null : EdgeInsets.only(left: 16, top: 16, right: 12, bottom: 16),
-        icon: Icon(Icons.moped_outlined, color: Colors.white),
+        extendedPadding: _floatButtonExtended ? null : const EdgeInsets.only(left: 16, top: 16, right: 12, bottom: 16),
+        icon: const Icon(Icons.moped_outlined, color: Colors.white),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
         backgroundColor: UiConfig.primaryColor,
         onPressed: () {
           context.push('/delivery');
         },
         label: AnimatedSize(
-          duration: Duration(milliseconds: 100),
-          child: _floatButtonExtended ? Text('Delivers', style: TextStyle(color: Colors.white, fontSize: 22),) : SizedBox()
+          duration: const Duration(milliseconds: 100),
+          child: _floatButtonExtended ? const Text('Delivers', style: TextStyle(color: Colors.white, fontSize: 22),) : const SizedBox()
         )
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -80,19 +80,19 @@ class _HomeTabState extends State<HomeTab> {
         },
         currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(Icons.home, size: 32), label: 'Home',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(Icons.payment, size: 32), label: 'Pay'
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(Icons.local_drink, size: 32), label: 'Order'
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(Icons.shopping_bag, size: 32), label: 'Shop'
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(Icons.more_horiz, size: 32), label: 'Other'
           ),
         ],

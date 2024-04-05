@@ -6,7 +6,7 @@ import 'package:flutter_starbucks_ui_clone/repository/news_repository.dart';
 
 class WhatsNewComponent extends StatefulWidget {
   final NewsRepository repository;
-  const WhatsNewComponent({Key? key, required this.repository}) : super(key: key);
+  const WhatsNewComponent({super.key, required this.repository});
 
   @override
   State<WhatsNewComponent> createState() => _WhatsNewComponentState();
@@ -19,7 +19,7 @@ class _WhatsNewComponentState extends State<WhatsNewComponent> {
       child: Container(
         child: Column(
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,7 +30,7 @@ class _WhatsNewComponentState extends State<WhatsNewComponent> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.only(left: 16),
               height: 300,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,

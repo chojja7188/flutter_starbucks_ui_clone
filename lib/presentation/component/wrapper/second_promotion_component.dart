@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class SecondPromotionComponent extends StatelessWidget {
-  const SecondPromotionComponent({Key? key}) : super(key: key);
+  const SecondPromotionComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: Container(
             decoration: BoxDecoration(
                 boxShadow: [
@@ -15,7 +15,7 @@ class SecondPromotionComponent extends StatelessWidget {
                       color: Colors.grey.withOpacity(0.6),
                       blurRadius: 8,
                       spreadRadius: 2,
-                      offset: Offset(0, 4)
+                      offset: const Offset(0, 4)
                   )
                 ]
             ),

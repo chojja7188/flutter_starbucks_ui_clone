@@ -3,12 +3,12 @@ import 'package:flutter_starbucks_ui_clone/model/event.dart';
 
 class EventCard extends StatelessWidget {
   final Event event;
-  const EventCard({Key? key, required this.event}) : super(key: key);
+  const EventCard({super.key, required this.event});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Container(
         decoration: BoxDecoration(
             boxShadow: [
@@ -16,7 +16,7 @@ class EventCard extends StatelessWidget {
                   color: Colors.grey.withOpacity(0.3),
                   blurRadius: 6,
                   spreadRadius: 0.4,
-                  offset: Offset(0, 5)
+                  offset: const Offset(0, 5)
               )
             ]
         ),
