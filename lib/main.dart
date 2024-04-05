@@ -18,10 +18,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: Scaffold(
-
-        body: MainScreen(),
-      )
+      home: SafeArea(child: MainScreen())
     );
   }
 }
