@@ -81,20 +81,20 @@ class _HomeTabState extends State<HomeTab> {
           });
         },
         currentIndex: _currentIndex,
-        items: [
-          const BottomNavigationBarItem(
+        items: const [
+          BottomNavigationBarItem(
               icon: Icon(Icons.home, size: 32), label: 'Home',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(Icons.payment, size: 32), label: 'Pay'
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(Icons.local_drink, size: 32), label: 'Order'
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(Icons.shopping_bag, size: 32), label: 'Shop'
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: Icon(Icons.more_horiz, size: 32), label: 'Other'
           ),
         ],

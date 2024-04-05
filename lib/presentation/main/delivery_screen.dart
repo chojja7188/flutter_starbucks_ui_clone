@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DeliveryScreen extends StatefulWidget {
-  const DeliveryScreen({Key? key}) : super(key: key);
+  const DeliveryScreen({super.key});
 
   @override
   State<DeliveryScreen> createState() => _DeliveryScreenState();

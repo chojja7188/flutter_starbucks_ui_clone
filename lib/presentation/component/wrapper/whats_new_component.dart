@@ -16,33 +16,31 @@ class _WhatsNewComponentState extends State<WhatsNewComponent> {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Container(
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(24),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("What's New", style: TextStyle(fontSize: 24,)),
-                  Text('See all', style: TextStyle(fontSize: 17, color: UiConfig.primaryColor),)
-                ],
-              ),
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(24),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("What's New", style: TextStyle(fontSize: 24,)),
+                Text('See all', style: TextStyle(fontSize: 17, color: UiConfig.primaryColor),)
+              ],
             ),
-            Container(
-              padding: const EdgeInsets.only(left: 16),
-              height: 300,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                  itemCount: _getNewsList().length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return WhatsNewCard(
-                      news: _getNewsList()[index]
-                    );
-              }),
-            )
-          ],
-        )
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 16),
+            height: 300,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+                itemCount: _getNewsList().length,
+                itemBuilder: (BuildContext context, int index) {
+                  return WhatsNewCard(
+                    news: _getNewsList()[index]
+                  );
+            }),
+          )
+        ],
       ),
     );
   }
