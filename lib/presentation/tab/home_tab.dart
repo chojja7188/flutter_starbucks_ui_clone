@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starbucks_ui_clone/config/ui_config.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/header/app_bar_component.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/header/header_component.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/first_promotion_component.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/second_promotion_component.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/whats_new_component.dart';
+import 'package:flutter_starbucks_ui_clone/repository/news_repository.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeTab extends StatefulWidget {
@@ -41,7 +43,7 @@ class _HomeTabState extends State<HomeTab> {
           AppBarComponent(),
           FirstPromotionComponent(),
           SecondPromotionComponent(),
-          WhatsNewComponent(),
+          WhatsNewComponent(repository: NewsRepository()),
           SliverList(
             delegate: SliverChildBuilderDelegate(
                 childCount: 8, (BuildContext context, int index) {
@@ -60,7 +62,7 @@ class _HomeTabState extends State<HomeTab> {
         extendedPadding: _floatButtonExtended ? null : EdgeInsets.only(left: 16, top: 16, right: 12, bottom: 16),
         icon: Icon(Icons.moped_outlined, color: Colors.white),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-        backgroundColor: Colors.green,
+        backgroundColor: UiConfig.primaryColor,
         onPressed: () {  },
         label: AnimatedSize(
           duration: Duration(milliseconds: 100),
