@@ -6,7 +6,7 @@ class AppBarComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
+    return const SliverAppBar(
       backgroundColor: Colors.white,
       scrolledUnderElevation: 0,
       toolbarHeight: 40,

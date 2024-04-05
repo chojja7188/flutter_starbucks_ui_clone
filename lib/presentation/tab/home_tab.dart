@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starbucks_ui_clone/config/ui_config.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/header/app_bar_component.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/header/header_component.dart';
+import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/event_list.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/first_promotion_component.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/second_promotion_component.dart';
 import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/whats_new_component.dart';
+import 'package:flutter_starbucks_ui_clone/repository/event_repository.dart';
 import 'package:flutter_starbucks_ui_clone/repository/news_repository.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -19,6 +21,7 @@ class _HomeTabState extends State<HomeTab> {
   late ScrollController _controller;
   bool _headerVisible = true;
   bool _floatButtonExtended = true;
+  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -44,16 +47,9 @@ class _HomeTabState extends State<HomeTab> {
           FirstPromotionComponent(),
           SecondPromotionComponent(),
           WhatsNewComponent(repository: NewsRepository()),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-                childCount: 8, (BuildContext context, int index) {
-              return Container(
-                color: Colors.red,
-                height: 400,
-                child: Text('Hi!'),
-              );
-            }
-            ),
+          EventList(repository: EventRepository()),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 30)
           )
         ],
       ),
@@ -71,12 +67,29 @@ class _HomeTabState extends State<HomeTab> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedItemColor: UiConfig.primaryColor,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home, size: 32), label: 'Home',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.payment, size: 32), label: 'Pay'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.local_drink, size: 32), label: 'Order'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag, size: 32), label: 'Shop'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.more_horiz, size: 32), label: 'Other'
+          ),
         ],
 
       ),
