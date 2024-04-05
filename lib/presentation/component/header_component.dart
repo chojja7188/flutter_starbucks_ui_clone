@@ -14,33 +14,35 @@ class HeaderComponent extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Text('5',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold
-                            )
-                        ),
-                        Icon(Icons.star, color: Colors.grey, size: 16,),
-                        Text('until Green Level', style: TextStyle(color: Colors.grey, fontSize: 16))
-                      ],
-                    ),
-                    SizedBox(height: 4),
-                    Container(
-                      width: 200,
-                      height: 6,
-                      decoration: BoxDecoration(
-                          color: Color(0xffececed),
-                          borderRadius: BorderRadius.circular(8)
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text('5',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold
+                              )
+                          ),
+                          Icon(Icons.star, color: Colors.grey, size: 16,),
+                          Text('until Green Level', style: TextStyle(color: Colors.grey, fontSize: 16))
+                        ],
                       ),
-                    )
-                  ],
+                      SizedBox(height: 4),
+                      Container(
+                        height: 7,
+                        decoration: BoxDecoration(
+                            color: Color(0xffececed),
+                            borderRadius: BorderRadius.circular(8)
+                        ),
+                      )
+                    ],
+                  ),
                 ),
+                SizedBox(width: 32),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
