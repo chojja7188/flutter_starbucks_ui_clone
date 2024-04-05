@@ -7,9 +7,10 @@ class AppBarComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: Colors.white,
+      scrolledUnderElevation: 0,
       toolbarHeight: 40,
       shadowColor: Colors.grey,
-      scrolledUnderElevation: 0,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
           title: Row(
@@ -27,6 +28,7 @@ class AppBarComponent extends StatelessWidget {
                   )),
                   SizedBox(width: 20,),
                   Icon(Icons.receipt_long_outlined, size: 20,),
+                  SizedBox(width: 8),
                   Text("Coupon", style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
