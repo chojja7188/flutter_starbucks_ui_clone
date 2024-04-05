@@ -9,6 +9,7 @@ import 'package:flutter_starbucks_ui_clone/presentation/component/wrapper/whats_
 import 'package:flutter_starbucks_ui_clone/repository/event_repository.dart';
 import 'package:flutter_starbucks_ui_clone/repository/news_repository.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -59,7 +60,9 @@ class _HomeTabState extends State<HomeTab> {
         icon: Icon(Icons.moped_outlined, color: Colors.white),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
         backgroundColor: UiConfig.primaryColor,
-        onPressed: () {  },
+        onPressed: () {
+          context.push('/delivery');
+        },
         label: AnimatedSize(
           duration: Duration(milliseconds: 100),
           child: _floatButtonExtended ? Text('Delivers', style: TextStyle(color: Colors.white, fontSize: 22),) : SizedBox()

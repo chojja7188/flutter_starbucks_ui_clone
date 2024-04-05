@@ -44,11 +44,6 @@ class AppBarComponent extends StatelessWidget {
               end: 24,
               bottom: 8
           ),
-          background: Column(
-            children: [
-
-            ],
-          )
       ),
     );
   }
