@@ -8,6 +8,6 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(child: HomeTab());
+    return HomeTab();
   }
 }

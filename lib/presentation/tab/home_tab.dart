@@ -40,19 +40,21 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        controller: _controller,
-        slivers: [
-          HeaderComponent(visible: _headerVisible),
-          const AppBarComponent(),
-          const FirstPromotionComponent(),
-          const SecondPromotionComponent(),
-          WhatsNewComponent(repository: NewsRepository()),
-          EventList(repository: EventRepository()),
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 30)
-          )
-        ],
+      body: SafeArea(
+        child: CustomScrollView(
+          controller: _controller,
+          slivers: [
+            HeaderComponent(visible: _headerVisible),
+            const AppBarComponent(),
+            const FirstPromotionComponent(),
+            const SecondPromotionComponent(),
+            WhatsNewComponent(repository: NewsRepository()),
+            EventList(repository: EventRepository()),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: 30)
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         extendedIconLabelSpacing: _floatButtonExtended ? 10 : 5,
